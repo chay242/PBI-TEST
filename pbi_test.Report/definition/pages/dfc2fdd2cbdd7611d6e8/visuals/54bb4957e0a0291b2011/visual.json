@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "54bb4957e0a0291b2011",
+  "position": {
+    "x": 343.93965258714161,
+    "y": 90.7093589240813,
+    "z": 2,
+    "height": 396.85344529285567,
+    "width": 279.68719001591734,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "financials"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "financials.Country",
+              "nativeQueryRef": "Country",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "financials"
+                        }
+                      },
+                      "Property": " Sales"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(financials. Sales)",
+              "nativeQueryRef": "Sum of  Sales"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "financials"
+                      }
+                    },
+                    "Property": " Sales"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
