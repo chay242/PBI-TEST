@@ -6,6 +6,11 @@ table financials
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Average Sales' = Average(financials[ Sales])
+		lineageTag: fab39810-4c96-4a94-b096-8a5f6e2e8752
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Segment
 		dataType: string
 		lineageTag: 797782b8-a300-4ac5-8d3c-e0d8d47af41a
